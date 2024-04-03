@@ -1,0 +1,10 @@
+#CCreator: Lifelib powered application
+#CAuthor : Andrzej Okrasinski
+#CEmail  : andrzej.okrasinski@interia.pl
+#CTime   : Sunday, October 23, 2005 @ 12:57PM
+#CFinal population = 4712/4724/4736
+x = 20, y = 20, rule = S23/B3
+o8bo$4bo2bo5bobo2bo$3bo2bo2b2o2bobo$12bobobo2bo$bo2bo5bobo2bo$bobobo
+8bo$2bo2bob2ob2o$bobo3bobo2b2o2bo$17bobo$8b2o4b2o$b2o10bo3b2o$bo11bo
+bo$o6bo2bo2bo2bob2o$3bobo4bobo3bo$bobo2b2o5bo$4bo11bo$2bo5bo4b2o3bo$
+3b3o2b2o3bobobo$o5bo8bo$obo2bob2o5bo!

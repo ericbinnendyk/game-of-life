@@ -1,0 +1,9 @@
+#C Creator: Lifestat application
+#C Author : Andrew Okrasinski
+#C Email  : andrzej.okrasinski@interia.pl
+#C Dies out completely after 743 gens
+x=20, y=20, rule=S23/B3
+4bo2b2o2bobo4bo$bobo2bo2bo6bo$4bobob3o4bo$o2bobo3bo4b2o2bo$b3o4bob2o
+bob3o$bo2b3obobobo6bo$ob3o3bo$5bo5bo2bo4bo$b2o2bob3o4bo2bo$o7b2o2b2o
+$2obo7b3o2bo$b4o4bob2ob4o$2obo5bo2bo2bo2bo$3bo8b2o4bo$3b2o5bobo$o2bo
+5bo5bo$9b2o5bob2o$7o3bo2b4obo$3b3o4b4obob2o$o6bo2b3o3b2obo!

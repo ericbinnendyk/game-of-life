@@ -1,0 +1,9 @@
+#CCreator: Lifestat application
+#CAuthor : Andrew Okrasinski
+#CEmail  : andrzej.okrasinski@interia.pl
+#CFinal population = 4558
+x = 20, y = 20, rule = S23/B3
+o2bo3bo3bo3bo3bo$2o6bobo$bobo5b2o2bo4bo$o3bo3bobo3bo$5b2o2b2o
+4bo3bo$bo6b2o9bo$o14b2o2bo$3bobob4o2bob2o$3bobo4bo4bo3bo$b2o12b
+o2bo$10bo4bob2o$3bo3b2o2bo4bo$2bo4b2obobo$b2o3bo5bo4bo$6bobob
+2obobo$3o5bo3bo$2obo7bo$2bo3bo10bo$4bobo2bo6b2obo$9bo6bobo!

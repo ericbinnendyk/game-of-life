@@ -1,0 +1,12 @@
+#C Creator: Lifestat application
+#C Author : Andrew Okrasinski
+#C Email  : andrzej.okrasinski@interia.pl
+#C Rapidly growing pattern.
+#C Final age = 8072
+#C Final population = 3560
+x = 20, y = 20, rule = S23/B3
+bobo7bo5bo$2bo3b2o6bo4bo$4bo5b2o3b2o$bo8bo6b2o$bob2o4bo4b3obo
+$7b2ob2ob3o3bo$o2b2o3bobobo4bo$bo10b2o$ob3obo2b2o3bo$bob2obob
+o4bobo$3bo8bo$bo6bobo$bo2bo2bo2bo4b2ob2o$2b2o2bo4b2obo3bo$bo5b
+o5bo2bo$o4bo2bo9b2o$2o5bobobob3o2bo$bo8bo3bobo$2b2ob3o6bo3bo$
+8bo4bobobo!

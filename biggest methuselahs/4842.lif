@@ -1,0 +1,11 @@
+#C Creator: Lifelib powered application
+#C Author : Andrew Okrasinski
+#C Email  : andrzej.okrasinski@interia.pl
+#C Final age = 28794
+#C (Final population = 4842, top population = 5646, gliders = 103)
+x = 20, y = 20, rule = S23/B3
+bo2b2o7b2obo$3bobo3bo8bo$bo6bo5bo4bo$o2bo11bo$3b4o2b3obob2obo
+$5b2obo2bo$o3bo6bobo3bo$4bo6b2ob2obo$3bobo7bo4b2o$5bo2bo2bo6b
+o$4b2o3bobobo3bobo$ob3o7b2ob3obo$7bo4bo2b2o2bo$2b2obo5bob4o$3b
+obob3o$3bo2b2obo3bob3obo$3bobo6b2o5bo$o3bobob2o2b2o5bo$3b2o3b
+o5bo$8bobo2bo!
