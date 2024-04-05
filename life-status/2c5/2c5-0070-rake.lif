@@ -1,0 +1,23 @@
+x = 50, y = 144, rule = B3/S23
+26bo5bo$25b3o3b3o$24bobbo3bobbo$24b3o5b3o$27bo3bo$21b5obooboob5o$20bo
+3booboobooboo3bo$19bobbo13bobbo$20bobbo11bobbo$20boobobo7boboboo$25bo
+7bo$20bo17bo$19bo4bo9bo4bo$20bo3bo9bo3bo$24bo9bo$24bo9bo$23bo11bo$24b
+oo7boo$23b3o7b3o$23bo11bo$22bobbo7bobbo$21bobobo7bobobo$21b3o11b3o$22b
+oo11boo$22bo13bo$22bobo9bobo$22bobbo7bobbo$23bobo7bobo$25bo7bo$23bo11b
+o$25bobb3obbo$23bo3bo3bo3bo$25b4ob4o$24bo9bo$$23boo9boo$25bo7bo$$23boo
+9boo$24bobo5bobo$26bo5bo$24bobo5bobo$23boobo5boboo$23bo11bo$22bo4bo3bo
+4bo$21bo5bo3bo5bo$21bo4bobobobo4bo$24bo9bo$21boobobbo3bobboboo$24bobo
+5bobo$24boo3bo3boo$21b3o3booboo3b3o$22bo4booboo4bo$$27booboo$26b3ob3o$
+24boobo3boboo$24bobo5bobo$24boo7boo$26bo5bo$25bobbobobbo$25bobbobobbo$
+28bobo$25booboboboo$26bobobobo$25booboboboo$25booboboboo$25booboboboo$
+28bobo$27booboo$25bobbobobbo$25booboboboo$24boboo3boobo$24boobo3boboo$
+24b11o$26b7o$15b3o11bo11b3o$14bo3bo21bo3bo$14booboo9b3o9booboo$15bobo
+9bo3bo9bobo$12b3obobobb3obbo5bobb3obbobob3o$17bo3b3o3bo3bo3b3o3bo$12b
+oo7bobbo3b3o3bobbo7boo$21bo15bo$22bo13bo$21bobo11bobo$29bo$12bo14boob
+oo$11b3o$10booboo11bo5bo$$9bobobobobbo8booboo$8boo3bo3b3o9bo$8boo3bo6b
+o20bo$18bobo4b3o3b3o6b3o$16bobo20booboo$17bobbo8bo$20bo8bo8bobobobobbo
+$29bo7boo3bo3b3o$37boo3bo6bo$47bobo$3b3o3b3o33bobo$bbo3bobo3bo14bo18bo
+bbo$bboo7boo12bo23bo$bbo3bobo3bo11bo5bo$3boo5boo11bo$3obo5bob3o8boo6bo
+3b3o$ooboo5booboo8b6o6b3o$boboo5boobo9boboo3bo3bo3bo$3boo5boo11boboo7b
+ooboo$o3bo5bo3bo18bo4bo3bo$3bo7bo21b5o3b3o$33boobooboobboo$40bobbo$43b
+o$43bo$41boo25$25bo$26bo$24b3o!

@@ -1,0 +1,553 @@
+<HTML>
+
+<HEAD>
+	<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+	<TITLE>PCViewer: Game of Life Pattern Collection Viewer</TITLE>
+	<SCRIPT SRC="./modernca.js"></SCRIPT>
+	<SCRIPT SRC="./pcviewerpattern.js"></SCRIPT>
+	<SCRIPT>
+        function PCAuthorPattern(name, group, rle, captionLines, sof, rule, maxRate, resetGeneration, resetTime,
+						        x, y, width, height, univWidth, univHeight, hideh, hidev,
+						        rleft, rtop, rright, rbottom, aleft, atop, aright, abottom) {
+	        this.PCViewerPattern = top.PCViewerPattern
+	        this.PCViewerPattern(name, group, captionLines, sof, rule, maxRate, resetGeneration, resetTime,
+								        x, y, width, height, univWidth, univHeight, hideh, hidev)
+        }
+    </SCRIPT>
+	
+	<!-- Add collection source files here: --> 
+	<SCRIPT SRC="./cgolvepc.js"></SCRIPT>         
+</HEAD>
+
+<NOSCRIPT> 
+Both Java and Javascript must be enabled within your browser in order for this page to work.
+</NOSCRIPT>
+
+<SCRIPT>
+var ctlWindow
+var tocWindow
+var viewWindow
+var params
+var interval = null
+var backlink = new Array()
+
+var kInitialZoom = 1
+var kInitialRate = 20
+var kInitialAutozoom = 4
+var autozooms = new Array('Off', '400x300', '512x384', '640x480', '800x600', '1000x800', '1200x1000', '1400x1100')
+var zooms = new Array(1, 2, 3, 4, 5, 6, 7, 8, 16)
+var p2zooms = new Array(1, 2, 2, 4, 4, 4, 4, 8, 8, 8, 8, 8, 8, 8, 8, 16)
+var rates = new Array('fast', 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 15, 20, 25, 30, 40, 50, 60, 75)
+var durations = new Array('off', 4, 5, 6, 7, 8, 9, 10, 12, 15, 20, 25, 30, 45, 60)
+var currentPatternIndex = 0
+var currentPattern = null
+var manualRate = kInitialRate
+var manualZoom = kInitialZoom
+var sstenthsremaining = -1
+
+var sstenthsremaining = -1
+
+function ssmonitor()
+{
+	if (sstenthsremaining > 0 && --sstenthsremaining == 0) {
+		onNext()
+	}
+}
+
+function hlink(c)
+{
+    var r = new Array
+    for (var i = 0; i < c.length; i++) {
+        var from = c[i]
+        r.push('')
+        for (;;) {
+            var p = from.indexOf('((')
+            var e = from.indexOf('))')
+            if (p < 0 || e < 0 || e < p) {
+                r[i] += from
+                break
+            }
+            while (from.substr(p + 1, 2) == '((') {
+                p += 1
+            }
+            r[i] += from.substring(0, p)
+            var found = false
+            var name = from.substring(p + 2, e)
+            for (var j = 0; j < patterns.length && !found; j++) {
+                found = patterns[j].name == name
+            }
+            r[i] += (found ? name.link('javascript: top.PushPattern(\'' + name + '\')') : name)
+            from = from.substr(e + 2)
+        }
+    }
+    return r    
+}
+
+function PushPattern(p)
+{
+    stopslides()
+    
+    ViewPattern(p, null, currentPattern)
+}
+
+function PopPattern()
+{
+    var len = backlink.length
+    if (len) {
+        ViewPattern(backlink[len - 1].name, backlink[len - 1].group, 'pop')
+    }
+}
+
+function view(fit, usePatternRate)
+{
+	if (patterns.length == 0) {
+		return
+	}
+	
+	sstenthsremaining = -1
+		
+	var d = viewWindow.document
+	d.open('text/html', 'replace')
+	d.writeln('<BODY bgcolor="#000000" text="#FFFFFF" vlink="#80FF80" link="#FFFFFF" alink="#80FF80">Preparing...</BODY>')
+	d.close()
+
+	d.open('text/html', 'replace')
+	d.writeln('<BODY bgcolor="#000000" text="#FFFFFF" vlink="#80FF80" link="#FFFFFF" alink="#80FF80">')
+
+	if (fit && params.Autozoom.selectedIndex != 0) {
+		var s = autozooms[params.Autozoom.selectedIndex].split('x')
+		var uw = currentPattern.univWidth - 2 * currentPattern.hideh
+		var uh = currentPattern.univHeight - 2 * currentPattern.hidev
+		var n = Math.min(Math.floor(parseInt(s[0]) / uw), Math.floor(parseInt(s[1]) / uh))
+		params.Zoom.selectedIndex = (n < 16 ? p2zooms[n - 1] : zooms.length) - 1
+	}
+	var zoom = zooms[params.Zoom.selectedIndex]
+	
+	if (currentPattern.maxRate != null && currentPattern.maxRate == 0) {
+	    params.Rate.selectedIndex = 1
+	} 
+	else if (usePatternRate && currentPattern.maxRate != null) {
+	    if (currentPattern.maxRate == 'fast') {
+    		params.Rate.selectedIndex = 0
+    	}
+    	else {	    
+		    var i
+		    for (i = 1; i < rates.length && currentPattern.maxRate > rates[i]; i++) {
+		    }
+		    params.Rate.selectedIndex = i < rates.length ? i : 0
+		}
+	}
+	
+	var rate = params.Rate.selectedIndex == 0 ? null : rates[params.Rate.selectedIndex]
+		
+	if (params.Limit.selectedIndex != 0) {
+	    var limit = rates[params.Limit.selectedIndex]
+	    if (rate == null || limit == 0 || rate > limit) {
+	        rate = limit
+	    }
+	}
+
+	currentPattern.AppletHtml(d, zoom, rate, params.colors.checked, hlink(currentPattern.captionLines),
+	                          backlink.length == 0 ? '' : '(back)'.link('javascript: top.PopPattern()'),
+	                          'view rle'.link('javascript: top.ViewRLE()'))
+
+	d.writeln('</BODY>')
+	d.close()
+	
+	if (params.Duration.selectedIndex > 0) {
+		sstenthsremaining = 10 * durations[params.Duration.selectedIndex] + 1
+	}
+}
+ 
+function comparegroups(a,b) {
+    var al = a.group.toLowerCase(); var bl = b.group.toLowerCase()
+	return al == bl ? 0 : al < bl ? -1 : 1;
+}
+
+function torle(pattern)
+{
+    var result = '#C ' + pattern.name + '<br>'
+    if (pattern.captionLines.length > 0) {
+        result += '#C ' + pattern.captionLines.join('<br>#C ') + '<br>'
+    }
+    var rule = pattern.rule.split('/')
+    result += 'x = ' + pattern.width + ', y = ' + pattern.height + ', rule = B' + rule[0] + '/S' + rule[1] + '<br>'
+
+    var bits = fromxsof(pattern.sof).replace(/0\./g, '.')
+    while (bits.length > 0 && bits.charAt(bits.length - 1) == '.') {
+        bits = bits.substring(0, bits.length - 1)
+    }
+    var out = ''
+    for (var i = 0; i < bits.length; i++) {
+        var j = i + 1
+        while (j < bits.length && bits.charAt(i) == bits.charAt(j)) {
+            j++
+        }
+        var count = j - i
+        if (count > 1) {
+            out += count
+        }
+        var ch = bits.charAt(i)
+        out += ch == '0' ? 'b' : ch == '1' ? 'o' : '$'
+        i = j - 1
+        if (out.length > 70) {
+            result += out + '<br>'
+            out = ''
+        }
+    }
+    return result + out + '!<br><br>'
+}
+
+function ViewRLE()
+{
+    var w = window.open('', '', 'toolbar=0,location=0,status=0,menubar=0,resizable=1,scrollbars=1')
+    var d = w.document
+	d.open('text/html')
+	d.writeln('<BODY>')
+	d.writeln(torle(currentPattern))
+	d.writeln('<br></BODY>')  
+	d.close() 
+    d.title = 'rle for ' + currentPattern.name
+} 
+
+function onZoom(i)
+{
+	manualZoom = i
+	view(false, false)
+}
+
+function onRate(i)
+{
+	manualRate = i
+	view(false, false)
+}
+
+function onLimit(i)
+{
+	view(false, false)
+}
+
+function onColors()
+{
+	view(false, false)
+}
+
+function onDuration(i) {
+	if (interval != null) {
+		clearInterval(interval); interval = null
+	}
+	if (i > 0) {
+		sstenthsremaining = 10 * durations[i] + 1
+		interval = setInterval('ssmonitor()', 100)
+	}
+}
+
+function stopslides()
+{
+	if (interval != null) {
+		clearInterval(interval); interval = null
+		params.Duration.selectedIndex = 0
+	}
+}
+
+
+function onAuto()
+{
+	view(true, false)
+}
+
+
+function selectpattern(i, blvalue) {
+	params.Rate.selectedIndex = manualRate
+	params.Zoom.selectedIndex = manualZoom
+	if (blvalue == null) {
+	    backlink.length = 0
+	}
+	else if (blvalue == 'pop') {
+	    backlink.length -= 1
+	}
+	else {
+	    backlink.push(blvalue)
+	}
+
+	selecttocpattern(i)
+	view(true, true)
+}
+
+
+function selecttocpattern(i) {
+	var p = patterns[i]
+	currentPattern = p
+	currentPatternIndex = i
+	
+	params.name.value = p.name
+}
+
+function onNext() {
+	if (patterns.length > 0) {
+	    var g = patterns[currentPatternIndex].group
+		selectpattern((currentPatternIndex + 1) % patterns.length)
+		if (g != patterns[currentPatternIndex].group) {
+		    setupTocWindow();
+		}
+	}
+}
+
+function onPrev() {
+	if (patterns.length > 0) {
+	    var g = patterns[currentPatternIndex].group
+		selectpattern((currentPatternIndex + patterns.length - 1) % patterns.length)
+		if (g != patterns[currentPatternIndex].group) {
+		    setupTocWindow();
+		}
+	}
+}
+
+function onTest() {
+	if (patterns.length == 0) {
+		return
+	}
+	
+	view(true, true)
+}
+
+function ViewPattern(name, group, blvalue)
+{
+	var d = viewWindow.document
+
+	for (var i = 0; i < patterns.length; i++) {
+		var p = patterns[i]
+		if (p.name == name) {
+		    if (group == null || p.group == group) {
+			    selectpattern(i, blvalue)
+			    return
+			}
+		}
+	}
+
+	for (var i = 0; i < patterns.length; i++) {
+		var p = patterns[i]
+		if (p.name == name) {
+		    selectpattern(i, blvalue)
+			return
+		}
+	}
+}
+
+function reference()
+{
+	stopslides()
+	
+	viewWindow.location.replace('./cgolvepcref.html')
+}
+
+function setupCtlWindow() {
+    var d = ctlWindow.document
+    d.open('text/html', 'replace')
+	d.writeln('<BODY bgcolor="#000000" text="#FFFFFF" vlink="#FF00FF" link="#00FF00" leftmargin="1" topmargin="1" rightmargin="1"><CENTER>')
+	
+	d.writeln('<br><h2><FONT COLOR="00FFFF">C</FONT><FONT COLOR="FF00FF">G</FONT><FONT COLOR="FFFF00">O</FONT>' +
+		'<FONT COLOR="00FF00">L</FONT><FONT COLOR="FF4040">V</FONT><FONT COLOR="8080FF">E</FONT>&nbsp;&nbsp;' +
+		'<FONT COLOR="FF4040">P</FONT><FONT COLOR="00FF00">C</FONT></h2>')
+	d.writeln('Reference'.link('javascript: top.reference()"'))
+
+	d.writeln('<FORM NAME="parameters"><TABLE><TR><TD>Zoom&nbsp;to&nbsp;fit:</TD><TD>')
+	writeSelect(d, 'Autozoom" onmousedown="top.stopslides()', 'top.onAuto', autozooms, kInitialAutozoom)
+	
+	d.writeln('<TR><TD>Zoom:</TD><TD>')
+	writeSelect(d, 'Zoom" onmousedown="top.stopslides()', 'top.onZoom', zooms, kInitialZoom)
+	d.writeln('</TD></TR><TR><TD>Rate:</TD><TD>')
+	writeSelect(d, 'Rate" onmousedown="top.stopslides()', 'top.onRate', rates, kInitialRate)
+	d.writeln('</TD></TR><TR><TD>Limit:</TD><TD>')
+	writeSelect(d, 'Limit" onmousedown="top.stopslides()', 'top.onLimit', rates, 0)
+	d.writeln('</TD></TR><TR><TD>Slide&nbsp;show:</TD><TD>')
+	writeSelect(d, 'Duration" onmousedown="top.stopslides()', 'top.onDuration', durations, 0)
+	d.writeln('</TD></TR>')
+	d.writeln('<tr><td colspan="2"><input type="checkbox" name="colors" onmousedown="top.stopslides()" onClick="top.onColors()">&nbsp;More&nbsp;survivor&nbsp;colors</input></td></tr>')
+	
+	d.writeln('</TABLE>')
+	
+	d.writeln('<INPUT TYPE="text" NAME="name" READONLY="1" SIZE=40 VALUE=""> ')
+	
+	d.writeln('<TABLE><TR><TD><INPUT TYPE="button" VALUE="Prev" NAME="prevButton" onClick="top.onPrev()"></TD>')
+	d.writeln('<TD><INPUT TYPE="button" VALUE="This" NAME="testButton" onClick="top.onTest()"></TD>')
+	d.writeln('<TD><INPUT TYPE="button" VALUE="Next" NAME="nextButton" onClick="top.onNext()"></TD></TR></TABLE>')
+
+	d.writeln('</CENTER></FORM>')
+	d.close()
+	
+	params = d.parameters
+}
+
+function gotogroup(group)
+{
+	for (var i = 0; i < patterns.length; i++) {
+		if (patterns[i].group == group) {
+			selectpattern(i)
+			setupTocWindow()
+			return
+		}
+	}
+}
+
+function setupTocWindow() {
+	var d = tocWindow.document
+	d.open('text/html', 'replace')
+	d.writeln('<BODY bgcolor="#000000" text="#FFFFFF" vlink="#FF00FF" link="#00FF00" leftmargin="8" topmargin="1" rightmargin="3">')
+
+    var groups = new Array();
+    var group = ''
+ 	for (var i = 0; i < patterns.length; i++) {
+		if (patterns[i].group != group) {
+		    group = patterns[i].group
+		    groups[groups.length] = group
+		}
+	}		    
+   
+	for (var g = 0; g < groups.length; g++) {
+		group = groups[g]
+		d.writeln('<li>&nbsp;')
+		if (group != patterns[currentPatternIndex].group) {
+			d.writeln('<A HREF="javascript: top.gotogroup(\'' + group + '\')">' + group + '</A>&nbsp;')
+		}
+		else {
+			d.writeln(group + '&nbsp;<br>')
+		    for (var i = 0; i < patterns.length; i++) {
+			    var p = patterns[i]
+			    if (p.group == group) {
+				    var link = '<A HREF="javascript: top.ViewPattern(\'' + p.name + '\''
+				    if (group.length > 0) {
+					    link += ', \'' + p.group + '\''
+				    }
+				    link += ')">' + p.name + '</A>&nbsp;'
+				    d.writeln(link)
+			    }
+		    }
+		}
+	}
+
+	d.writeln('</BODY>')
+	d.close()
+}
+
+function setupTocWindowOld() {
+    var ng = 0
+	var group = ''
+	for (var i = 0; i < patterns.length; i++) {
+		if (patterns[i].group != group) {
+		    ng += 1
+		    group = patterns[i].group
+		}
+	}
+	var s = patterns.concat().sort(comparegroups)
+	var ns = 0
+	group = ''
+	for (var i = 0; i < s.length; i++) {
+		if (s[i].group != group) {
+		    ns += 1
+		    group = s[i].group
+		}
+	}
+    var showgroups = ng > 1 && ng < 2 * ns
+    
+    var d = tocWindow.document
+    d.open('text/html', 'replace')
+	d.writeln('<BODY bgcolor="#000000" text="#FFFFFF" vlink="#FF00FF" link="#00FF00" leftmargin="3" topmargin="1" rightmargin="3">')
+	group = ''
+	for (var i = 0; i < patterns.length; i++) {
+		var p = patterns[i]
+		if (showgroups && p.group != group) {
+			d.writeln(' ' + p.group + ' ')
+			group = p.group
+		}
+		var link = '<A HREF="javascript: top.ViewPattern(\'' + p.name + '\''
+		if (group.length > 0) {
+		    link += ', \'' + p.group + '\''
+		}
+		link += ')">' + p.name + '</A>&nbsp;'
+		d.writeln(link)
+	}
+	
+	d.writeln('</BODY>')
+	d.close()
+}
+
+function loaded1() {    
+    var lhsd = frames['lhs'].document
+	lhsd.open('text/html', 'replace')
+	lhsd.writeln('<FRAMESET ROWS="40%,*"><FRAME SRC="blackframe.html" NAME="ctl">' +
+	             '<FRAME SRC="blackframe.html" NAME="toc"></FRAMESET>')
+	lhsd.close()
+
+    if (loaded2()) {
+        loaded3()
+    }
+    else {
+    	interval = setInterval('loaded2()', 10)
+    }
+}
+
+function loaded2()
+{
+    if (frames['lhs'].frames['ctl'] != undefined && frames['lhs'].frames['toc'] != undefined) {
+        ctlWindow = frames['lhs'].frames['ctl']
+        tocWindow = frames['lhs'].frames['toc']
+	    viewWindow = frames['rhs']
+        if (interval != null) {
+            clearInterval(interval)
+            interval = null
+	        loaded3()
+        }
+        
+	    return true
+    }
+    return false
+}
+
+function loaded3()
+{
+    setupCtlWindow()
+    
+  	top.document.title = 'CGOLVE Pattern Collection'
+  
+    if (patterns.length > 0) {
+	    var i = 0
+	    var a = parent.document.URL.indexOf('#')
+	    if (a > 0) {
+		    a = parent.document.URL.substr(a + 1).replace(/%20/g, ' ')
+		    for (var j = 0; j < patterns.length; j++) {
+			    if (patterns[j].name == a) {
+			        selectpattern(j)
+                    setupTocWindow()
+			        return
+			    }
+		    }
+	    }
+	    for (var j = 0; j < patterns.length; j++) {
+		    if (patterns[j].name == '1st') {
+		        selectpattern(j)
+		        setupTocWindow()
+		        return
+		    }
+	    }
+	    selectpattern(0)
+    }
+	
+	setupTocWindow()
+}
+
+</SCRIPT>
+
+<FRAMESET COLS="30%,*" onload="loaded1()">
+	<FRAME SRC="blackframe.html" NAME="lhs">
+	<FRAME SRC="blackframe.html" NAME="rhs">
+</FRAMESET>
+
+
+<NOFRAMES>
+<BODY>
+</BODY>
+</NOFRAMES>
+
+
+</HTML>

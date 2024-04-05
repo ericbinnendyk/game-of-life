@@ -1,0 +1,25 @@
+#C glider-to-LWSS still life in X-shaped pattern, using 2LWSS->2G
+#C David Bell, 30 October 2007
+x = 149, y = 71, rule = B3/S23
+7boo131boo$7bo133bo$4boobo133boboo$5boboboo127boobobo$5bobobbo4boo115b
+oo4bobbobo$6bobo6bo117bo6bobo$7bo4boobo117boboo4bo$13boboboo111boobobo
+$13bobobbo4boo99boo4bobbobo$14bobo6bo101bo6bobo$15bo4boobo101boboo4bo$
+21boboboo95boobobo$21bobobbo4boo83boo4bobbobo$22bobo6bo85bo6bobo$23bo
+4boobo85boboo4bo$29boboboo79boobobo$29bobobbo4boo67boo4bobbobo$30bobo
+6bo69bo6bobo$31bo4boobo69boboo4bo$37boboboo63boobobo$37bobobbo4boo51b
+oo4bobbobo$38bobo6bo53bo6bobo$39bo4boobo53boboo4bo$45boboboo47boobobo$
+45bobobbo4boo35boo4bobbobo$46bobo6bo37bo6bobo$47bo4boobo37boboo4bo$53b
+oboboo31boobobo$53bobobbo4boo19boo4bobbobo$54bobo6bo21bo6bobo$55bo4boo
+bo21boboo4bo$61boboboo15boobobo$61bobobbo15bobbobo$62bobo19bobo$63bo7b
+3ob3o7bo$71bo5bo$59bo12bo3bo12bo$58bobo27bobo$57bobobbo23bobbobo$57bob
+oboo23boobobo$51bo4boobo29boboo4bo$50bobo6bo29bo6bobo$49bobobbo4boo27b
+oo4bobbobo$49boboboo39boobobo$43bo4boobo45boboo4bo$42bobo6bo45bo6bobo$
+41bobobbo4boo43boo4bobbobo$41boboboo55boobobo$35bo4boobo61boboo4bo$34b
+obo6bo61bo6bobo$33bobobbo4boo59boo4bobbobo$33boboboo71boobobo$27bo4boo
+bo77boboo4bo$26bobo6bo77bo6bobo$25bobobbo4boo75boo4bobbobo$25boboboo
+87boobobo$19bo4boobo93boboo4bo$18bobo6bo93bo6bobo$17bobobbo4boo91boo4b
+obbobo$17boboboo103boobobo$11bo4boobo109boboo4bo$10bobo6bo109bo6bobo$
+9bobobbo4boo107boo4bobbobo$9boboboo119boobobo$3bo4boobo125boboo4bo$bbo
+bo6bo125bo6bobo$bobobbo4boo123boo4bobbobo$boboboo135boobobo$oobo141bob
+oo$3bo141bo$3boo139boo!
+CB 1,1,1,1

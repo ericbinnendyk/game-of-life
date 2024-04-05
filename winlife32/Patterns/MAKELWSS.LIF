@@ -1,0 +1,15 @@
+#Life 1.05
+#D Light-weight Spaceship synthesis
+#N
+#P -1 -4
+..*
+*.*
+.**
+#P -5 1
+.*
+.**
+*.*
+#P 1 5
+.*
+**
+*.*

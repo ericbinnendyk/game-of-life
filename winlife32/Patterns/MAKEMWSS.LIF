@@ -1,0 +1,15 @@
+#Life 1.05
+#D Medium-weight Spaceship synthesis
+#N
+#P -7 -5
+..*
+*.*
+.**
+#P -4 2
+.**
+*.*
+..*
+#P 6 2
+.*
+**
+*.*

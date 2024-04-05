@@ -1,0 +1,1049 @@
+##WinLifeAttribute LibraryCreated=2004-0-11 17:23:39
+##WinLifeAttribute LibraryUpdated=1969-11-31 16:0:0
+#B aircraft carrier
+#r 23/3
+#P -2 -1
+**..
+*..*
+..**
+#E
+#B B-heptomino
+##WinLifeAttribute PatternType=unstable
+#r 23/3
+#P -2 -1
+.*..
+***.
+*.**
+#E
+#B B-heptomino shuttle
+##WinLifeAttribute PatternType=precursor
+##WinLifeAttribute PatternCycleStart=10
+##WinLifeAttribute PatternFold=46
+##WinLifeAttribute PatternFoldTransform=0
+#r 23/3
+#P -14 -5
+.................*...........
+**...............**........**
+**................**.......**
+.................**..........
+.............................
+.............................
+.............................
+.................**..........
+..................**.........
+.................**..........
+.................*...........
+#E
+#B Bakery
+#r 23/3
+#P -5 -5
+....**....
+...*..*...
+...*.*....
+.**.*...*.
+*..*...*.*
+*.*...*..*
+.*...*.**.
+....*.*...
+...*..*...
+....**....
+#E
+#B Barge
+#r 23/3
+#P -2 -2
+.*..
+*.*.
+.*.*
+..*.
+#E
+#B Beacon
+##WinLifeAttribute PatternType=oscillator
+##WinLifeAttribute PatternPeriod=2
+#r 23/3
+#P -2 -2
+**..
+*...
+...*
+..**
+#E
+#B Beehive
+#r 23/3
+#P -2 -1
+.**.
+*..*
+.**.
+#E
+#B Beehive and dock
+#r 23/3
+#P -3 -3
+**..**
+*....*
+.****.
+......
+...**.
+..*..*
+...**.
+#E
+#B Beehive with tail
+#r 23/3
+#P -2 -3
+.*...
+*.*..
+*.*..
+.*...
+..***
+....*
+#E
+#B Bi-boat
+#r 23/3
+#P -3 -3
+.*....
+*.*...
+.**...
+...**.
+...*.*
+....*.
+#E
+#B Bi-pond
+#r 23/3
+#P -3 -3
+.**....
+*..*...
+*..*...
+.**.**.
+...*..*
+...*..*
+....**.
+#E
+#B Biblock
+#r 23/3
+#P -2 -1
+**.**
+**.**
+#E
+#B Big S
+#r 23/3
+#P -3 -3
+....**.
+...*..*
+...*.**
+**.*...
+*..*...
+.**....
+#E
+#B Biloaf
+#r 23/3
+#P -3 -3
+....**.
+...*..*
+...*.*.
+.**.*..
+*..*...
+*.*....
+.*.....
+#E
+#B Blinker
+##WinLifeAttribute PatternType=oscillator
+##WinLifeAttribute PatternPeriod=2
+##WinLifeAttribute PatternFold=1
+##WinLifeAttribute PatternFoldTransform=1
+#r 23/3
+#P -1 0
+***
+#E
+#B Block
+#r 23/3
+#P -1 -1
+**
+**
+#E
+#B Block and dock
+#r 23/3
+#P -3 -3
+**..**
+*....*
+.****.
+......
+...**.
+...**.
+#E
+#B Block on table
+#r 23/3
+#P -2 -2
+**...
+.*...
+.*.**
+**.**
+#E
+#B Boat
+#r 23/3
+#P -1 -1
+**.
+*.*
+.*.
+#E
+#B Bookends
+#r 23/3
+#P -3 -2
+**...**
+*.*.*.*
+..*.*..
+.**.**.
+#E
+#B Cis-boat with tail
+#r 23/3
+#P -2 -2
+....*
+..***
+.*...
+*.*..
+.**..
+#E
+#B Cis-mirrored R-bee
+#r 23/3
+#P -2 -3
+.**.
+*..*
+***.
+....
+***.
+*..*
+.**.
+#E
+#B Clock
+##WinLifeAttribute PatternType=oscillator
+##WinLifeAttribute PatternPeriod=2
+##WinLifeAttribute PatternFold=1
+##WinLifeAttribute PatternFoldTransform=4
+#r 23/3
+#P -2 -2
+..*.
+**..
+..**
+.*..
+#E
+#B Confused eaters
+##WinLifeAttribute PatternType=oscillator
+##WinLifeAttribute PatternPeriod=4
+##WinLifeAttribute PatternFold=2
+##WinLifeAttribute PatternFoldTransform=4
+#r 23/3
+#P -5 -5
+*..........
+***........
+...*.......
+..*........
+..*..*.....
+.....*.....
+...*.*.....
+...**..**..
+.......*.*.
+.........*.
+.........**
+#E
+#B Cross
+##WinLifeAttribute PatternType=oscillator
+##WinLifeAttribute PatternPeriod=3
+#r 23/3
+#P -4 -4
+..****..
+..*..*..
+***..***
+*......*
+*......*
+***..***
+..*..*..
+..****..
+#E
+#B Cuphook
+##WinLifeAttribute PatternType=oscillator
+##WinLifeAttribute PatternPeriod=3
+#r 23/3
+#P -4 -4
+....**...
+...*.*...
+...*.....
+**.*.....
+**.*..*..
+....**.*.
+.......*.
+.......**
+#E
+#B Dead spark coil
+#r 23/3
+#P -3 -2
+**...**
+*.*.*.*
+..*.*..
+*.*.*.*
+**...**
+#E
+#B Double Light
+##WinLifeAttribute PatternType=oscillator
+##WinLifeAttribute PatternPeriod=2
+#r 23/3
+#P -6 -6
+........***..
+.............
+......*.....*
+......*.....*
+......*.....*
+.............
+..***...***..
+.............
+*.....*......
+*.....*......
+*.....*......
+.............
+..***........
+#E
+#B Double wing
+#r 23/3
+#P -4 -2
+**.....**
+*.......*
+.***.***.
+...*.*...
+....*....
+#E
+#B Eater
+#r 23/3
+#P -2 -2
+..**
+.*.*
+.*..
+**..
+#E
+#B Elevener
+#r 23/3
+#P -3 -3
+....**
+.....*
+..***.
+..*...
+*.*...
+**....
+#E
+#B Figure 8
+##WinLifeAttribute PatternType=oscillator
+##WinLifeAttribute PatternPeriod=8
+#r 23/3
+#P -3 -3
+***...
+***...
+***...
+...***
+...***
+...***
+#E
+#B Fleet
+#r 23/3
+#P -5 -5
+....**....
+....*.*...
+.....**...
+.......**.
+**.....*.*
+*.*.....**
+.**.......
+...**.....
+...*.*....
+....**....
+#E
+#B Fourteener
+#r 23/3
+#P -3 -2
+....**.
+**..*.*
+*.....*
+.*****.
+...*...
+#E
+#B Fumarole
+##WinLifeAttribute PatternType=oscillator
+##WinLifeAttribute PatternPeriod=5
+#r 23/3
+#P -4 -3
+...**...
+.*....*.
+.*....*.
+.*....*.
+..*..*..
+*.*..*.*
+**....**
+#E
+#B Glider
+##WinLifeAttribute PatternType=ship
+##WinLifeAttribute PatternPeriod=4
+##WinLifeAttribute PatternVelocity=1 1
+#r 23/3
+#P -1 -1
+..*
+*.*
+.**
+#E
+#B Gosper gun
+##WinLifeAttribute PatternType=unstable
+#r 23/3
+#P -18 -4
+.........................*..........
+......................****....*.....
+.............*.......****.....*.....
+............*.*......*..*.........**
+...........*...**....****.........**
+**.........*...**.....****..........
+**.........*...**........*..........
+............*.*.....................
+.............*......................
+#E
+#B Great on-off
+##WinLifeAttribute PatternType=oscillator
+##WinLifeAttribute PatternPeriod=2
+#r 23/3
+#P -4 -4
+..**....
+.*..*...
+.*.**...
+**.*.**.
+....**.*
+.......*
+....***.
+....*...
+#E
+#B Hat
+#r 23/3
+#P -2 -2
+..*..
+.*.*.
+.*.*.
+**.**
+#E
+#B Heavyweight spaceship
+##WinLifeAttribute PatternType=ship
+##WinLifeAttribute PatternPeriod=4
+##WinLifeAttribute PatternVelocity=0 2
+#r 23/3
+#P -2 -3
+.*.*.
+*....
+*...*
+*...*
+*....
+*..*.
+***..
+#E
+#B Honeyfarm
+#r 23/3
+#P -6 -6
+......*......
+.....*.*.....
+.....*.*.....
+......*......
+.............
+.**.......**.
+*..*.....*..*
+.**.......**.
+.............
+......*......
+.....*.*.....
+.....*.*.....
+......*......
+#E
+#B Integral sign
+#r 23/3
+#P -2 -2
+...**
+..*.*
+..*..
+*.*..
+**...
+#E
+#B Light bulb
+##WinLifeAttribute PatternType=oscillator
+##WinLifeAttribute PatternPeriod=2
+#r 23/3
+#P -3 -4
+.**.*..
+.*.**..
+.......
+..***..
+.*...*.
+.*...*.
+..*.*..
+*.*.*.*
+**...**
+#E
+#B Loaf
+#r 23/3
+#P -2 -2
+.**.
+*..*
+*.*.
+.*..
+#E
+#B Long barge
+#r 23/3
+#P -2 -2
+.*...
+*.*..
+.*.*.
+..*.*
+...*.
+#E
+#B Long boat
+#r 23/3
+#P -2 -2
+**..
+*.*.
+.*.*
+..*.
+#E
+#B Long ship
+#r 23/3
+#P -2 -2
+**..
+*.*.
+.*.*
+..**
+#E
+#B Loop
+#r 23/3
+#P -2 -2
+*...
+***.
+...*
+**.*
+*.*.
+#E
+#B Lumps of muck
+#r 23/3
+#P -11 -5
+**.....................
+**.....................
+.......................
+.......................
+.**.................**.
+.**.................**.
+.......................
+.......................
+.....................**
+.....................**
+#E
+#B Mango
+#r 23/3
+#P -2 -2
+.**..
+*..*.
+.*..*
+..**.
+#E
+#B Mazing
+##WinLifeAttribute PatternType=oscillator
+##WinLifeAttribute PatternPeriod=4
+##WinLifeAttribute PatternFold=2
+##WinLifeAttribute PatternFoldTransform=2
+#r 23/3
+#P -3 -3
+...**..
+.*.*...
+*.....*
+.*...**
+.......
+...*.*.
+....*..
+#E
+#B Middleweight spaceship
+##WinLifeAttribute PatternType=ship
+##WinLifeAttribute PatternPeriod=4
+##WinLifeAttribute PatternVelocity=0 2
+#r 23/3
+#P -2 -3
+.*.*.
+*....
+*...*
+*....
+*..*.
+***..
+#E
+#B Mold
+##WinLifeAttribute PatternType=oscillator
+##WinLifeAttribute PatternPeriod=4
+##WinLifeAttribute PatternFold=2
+##WinLifeAttribute PatternFoldTransform=6
+#r 23/3
+#P -3 -3
+.**...
+*..*..
+*.*..*
+.*....
+..**.*
+....*.
+#E
+#B Monogram
+##WinLifeAttribute PatternType=oscillator
+##WinLifeAttribute PatternPeriod=4
+##WinLifeAttribute PatternFold=2
+##WinLifeAttribute PatternFoldTransform=1
+#r 23/3
+#P -3 -2
+**...**
+.*.*.*.
+.**.**.
+.*.*.*.
+**...**
+#E
+#B Octagon II
+##WinLifeAttribute PatternType=oscillator
+##WinLifeAttribute PatternPeriod=5
+#r 23/3
+#P -4 -4
+...**...
+..*..*..
+.*....*.
+*......*
+*......*
+.*....*.
+..*..*..
+...**...
+#E
+#B Paperclip
+#r 23/3
+#P -2 -3
+..**.
+.*..*
+.*.**
+**.*.
+*..*.
+.**..
+#E
+#B Pentadecathlon
+##WinLifeAttribute PatternType=oscillator
+##WinLifeAttribute PatternPeriod=15
+#r 23/3
+#P -5 -1
+..*....*..
+**.****.**
+..*....*..
+#E
+#B Phoenix
+##WinLifeAttribute PatternType=oscillator
+##WinLifeAttribute PatternPeriod=2
+##WinLifeAttribute PatternFold=1
+##WinLifeAttribute PatternFoldTransform=5
+#r 23/3
+#P -4 -4
+...*....
+...*.*..
+.*......
+......**
+**......
+......*.
+..*.*...
+....*...
+#E
+#B Pi-H Residue
+##WinLifeAttribute PatternType=oscillator
+##WinLifeAttribute PatternPeriod=2
+#r 23/3
+#P -23 -15
+.......**.............................**.......
+......*..*........**.......**........*..*......
+......*..*........**.......**........*..*......
+.......**.............................**.......
+...............................................
+...............................................
+...............................................
+...............................................
+...............................................
+...............................................
+...............................................
+....*.....................................*....
+....*.....................................*....
+....*.....................................*....
+...............................................
+***.........................................***
+...............................................
+...............................................
+...............................................
+...............................................
+...............................................
+...............................................
+...............................................
+...............................................
+..........**.......................**..........
+..........**.......................**..........
+......**...............................**......
+......**...............................**......
+.......................*.......................
+.......................*.......................
+.......................*.......................
+#E
+#B Pi heptomino
+##WinLifeAttribute PatternType=unstable
+#r 23/3
+#P -1 -1
+***
+*.*
+*.*
+#E
+#B Pond
+#r 23/3
+#P -2 -2
+.**.
+*..*
+*..*
+.**.
+#E
+#B Pseudo-barberpole
+##WinLifeAttribute PatternType=oscillator
+##WinLifeAttribute PatternPeriod=5
+#r 23/3
+#P -6 -6
+..........**
+...........*
+.........*..
+.......*.*..
+............
+.....*.*....
+............
+...*.*......
+............
+..**........
+*...........
+**..........
+#E
+#B Pulsar
+##WinLifeAttribute PatternType=oscillator
+##WinLifeAttribute PatternPeriod=3
+#r 23/3
+#P -6 -6
+..***...***..
+.............
+*....*.*....*
+*....*.*....*
+*....*.*....*
+..***...***..
+.............
+..***...***..
+*....*.*....*
+*....*.*....*
+*....*.*....*
+.............
+..***...***..
+#E
+#B Quad
+##WinLifeAttribute PatternType=oscillator
+##WinLifeAttribute PatternPeriod=2
+##WinLifeAttribute PatternFold=1
+##WinLifeAttribute PatternFoldTransform=5
+#r 23/3
+#P -3 -3
+**..**
+*..*.*
+.*....
+....*.
+*.*..*
+**..**
+#E
+#B Quadpole
+##WinLifeAttribute PatternType=oscillator
+##WinLifeAttribute PatternPeriod=2
+##WinLifeAttribute PatternFold=1
+##WinLifeAttribute PatternFoldTransform=4
+#r 23/3
+#P -3 -3
+**.....
+*.*....
+.......
+..*.*..
+.......
+....*.*
+.....**
+#E
+#B R-pentomino
+##WinLifeAttribute PatternType=unstable
+#r 23/3
+#P -1 -1
+.**
+**.
+.*.
+#E
+#B Rabbits
+##WinLifeAttribute PatternType=unstable
+#r 23/3
+#P -3 -1
+*...***
+***..*.
+.*.....
+#E
+#B Scorpion
+#r 23/3
+#P -3 -3
+...*...
+.***...
+*...**.
+*.*.*.*
+.**.*.*
+.....*.
+#E
+#B Shillelagh
+#r 23/3
+#P -2 -1
+**...
+*..**
+.**.*
+#E
+#B Ship
+#r 23/3
+#P -1 -1
+**.
+*.*
+.**
+#E
+#B Ship on boat
+#r 23/3
+#P -3 -3
+**....
+*.*...
+.**...
+...**.
+...*.*
+....*.
+#E
+#B Shiptie
+#r 23/3
+#P -3 -3
+**....
+*.*...
+.**...
+...**.
+...*.*
+....**
+#E
+#B Sinking ship
+#r 23/3
+#P -2 -2
+...**
+....*
+...*.
+*.*..
+**...
+#E
+#B Skewed quad
+##WinLifeAttribute PatternType=oscillator
+##WinLifeAttribute PatternPeriod=2
+#r 23/3
+#P -3 -3
+.**....
+.*...**
+..*.*.*
+.......
+*.*.*..
+**...*.
+....**.
+#E
+#B Snake
+#r 23/3
+#P -2 -1
+**.*
+*.**
+#E
+#B Spaceship
+##WinLifeAttribute PatternType=ship
+##WinLifeAttribute PatternPeriod=4
+##WinLifeAttribute PatternVelocity=0 2
+#r 23/3
+#P -2 -2
+.*.*
+*...
+*...
+*..*
+***.
+#E
+#B Spark coil
+##WinLifeAttribute PatternType=oscillator
+##WinLifeAttribute PatternPeriod=2
+#r 23/3
+#P -4 -2
+**....**
+*.*..*.*
+..*..*..
+*.*..*.*
+**....**
+#E
+#B Table on table
+#r 23/3
+#P -2 -2
+*..*
+****
+....
+****
+*..*
+#E
+#B Test tube baby
+##WinLifeAttribute PatternType=oscillator
+##WinLifeAttribute PatternPeriod=2
+#r 23/3
+#P -4 -2
+**....**
+*.*..*.*
+..*..*..
+..*..*..
+...**...
+#E
+#B Toad
+##WinLifeAttribute PatternType=oscillator
+##WinLifeAttribute PatternPeriod=2
+#r 23/3
+#P -1 -2
+.*
+**
+**
+*.
+#E
+#B Traffic lights
+##WinLifeAttribute PatternType=oscillator
+##WinLifeAttribute PatternPeriod=2
+#r 23/3
+#P -4 -4
+....*....
+....*....
+....*....
+.........
+***...***
+.........
+....*....
+....*....
+....*....
+#E
+#B Trans-boat with tail
+#r 23/3
+#P -2 -2
+...**
+..*.*
+.*.*.
+.*...
+**...
+#E
+#B Trice tongs
+##WinLifeAttribute PatternType=oscillator
+##WinLifeAttribute PatternPeriod=3
+#r 23/3
+#P -3 -3
+**.....
+**..*..
+..**.*.
+..*..*.
+.*...**
+..***..
+....*..
+#E
+#B Tripole
+##WinLifeAttribute PatternType=oscillator
+##WinLifeAttribute PatternPeriod=2
+##WinLifeAttribute PatternFold=1
+##WinLifeAttribute PatternFoldTransform=2
+#r 23/3
+#P -3 -3
+**....
+*.*...
+......
+..*.*.
+.....*
+....**
+#E
+#B Tub
+#r 23/3
+#P -1 -1
+.*.
+*.*
+.*.
+#E
+#B Tub with tail
+#r 23/3
+#P -2 -2
+.*...
+*.*..
+.*.*.
+...*.
+...**
+#E
+#B Tumbler
+##WinLifeAttribute PatternType=oscillator
+##WinLifeAttribute PatternPeriod=14
+##WinLifeAttribute PatternFold=7
+##WinLifeAttribute PatternFoldTransform=2
+#r 23/3
+#P -3 -3
+.**.**.
+.**.**.
+..*.*..
+*.*.*.*
+*.*.*.*
+**...**
+#E
+#B Twinhat
+#r 23/3
+#P -4 -2
+..*...*..
+.*.*.*.*.
+.*.*.*.*.
+**.*.*.**
+....*....
+#E
+#B Two eaters
+##WinLifeAttribute PatternType=oscillator
+##WinLifeAttribute PatternPeriod=3
+#r 23/3
+#P -4 -4
+**.......
+.*.......
+.*.*.....
+..**.....
+.....**..
+.....*.*.
+.......*.
+.......**
+#E
+#B Unix
+##WinLifeAttribute PatternType=oscillator
+##WinLifeAttribute PatternPeriod=6
+#r 23/3
+#P -4 -4
+.**.....
+.**.....
+........
+.*......
+*.*.....
+*..*..**
+....*.**
+..**....
+#E
+#B Very long barge
+#r 23/3
+#P -3 -3
+.*....
+*.*...
+.*.*..
+..*.*.
+...*.*
+....*.
+#E
+#B Very long boat
+#r 23/3
+#P -2 -2
+.*...
+*.*..
+.*.*.
+..*.*
+...**
+#E
+#B Very long ship
+#r 23/3
+#P -2 -2
+**...
+*.*..
+.*.*.
+..*.*
+...**
+#E

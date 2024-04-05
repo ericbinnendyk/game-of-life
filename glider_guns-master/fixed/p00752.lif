@@ -1,0 +1,11 @@
+#CXRLE Pos=0,0 Gen=382
+x = 61, y = 48, rule = B3/S23
+27b2o$15bo7b2o3bo$15b3o5b2o3bobo5b2o7bo$8b2o8bo10b2o5b2o5b3o$9bo7b2o
+23bo8b2o$9bobo30b2o7bo$10b2o37bobo$27bo4b3o14b2o$5bo20bobo3b3o$5b3o17b
+o5bo2bo20bo$8bo16bo5b2o20b3o$7b2o6b2o8b2obo3bo2b3o14bo$14b3o9b2o24b2o$
+14bo15b4o$13b2o15b5o$2b2ob2o5b2o17bob2o13b2o$o2bob2o5bo30bo6bo3b2ob2o$
+2obo9b3o2b2o22b3o9b2obo2bo$3bo10b3obo22bo3bo11bob2o$3b2o11b2o23bob2o
+12bo$b2o2bobo34b2o12b2o$o2bo2b2o45bobo2b2o$b2o16b2o32b2o2bo2bo$19bo20b
+2o16b2o$13b2o5b3o18bo$13b2o7bo15b3o5b2o$38bo7b2o3$28b2o15b2o$28b3o14b
+2o$22b2o2bo2bobo$22b2o2b2o2b2o$26b2o26b2o$41bo11bobo$39bobo12bo$40b2o
+2$48b2o$48b2o2$55b2o$55bobo$57bo$42b2o13b2o$43bo$40b3o6b2o$40bo8b2o!
